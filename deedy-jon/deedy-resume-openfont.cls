@@ -1,84 +1,227 @@
-% Intro Options
-\ProvidesClass{deedy-resume-openfont}[2014/04/30 CV class]
-\NeedsTeXFormat{LaTeX2e}
-\DeclareOption{print}{\def\@cv@print{}}
-\DeclareOption*{%
-  \PassOptionsToClass{\CurrentOption}{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.2 (16/9/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[]{deedy-resume-openfont}
+\usepackage{fancyhdr}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+ 
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{Jonathan}{Ng} { \urlstyle{same}\href{mailto:jonathan.n@u.nus.edu}{jonathan.n@u.nus.edu}| \href{http://t.me/derpy/}{@derpy}\\
+\href{http://www.h1b1.com/practices/h-1b1-visa-for-chileans-singaporeans/}{H1B1 Eligible}
+| +65 83995537
+\\
 }
-\ProcessOptions\relax
-\LoadClass{article}
 
-% Package Imports
-\usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry}
-\usepackage[hidelinks]{hyperref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Publications
-\usepackage{cite}
-\renewcommand\refname{\vskip -1.5cm}
+\begin{minipage}[t]{0.33\textwidth}
 
-% Color definitions
-\usepackage[usenames,dvipsnames]{xcolor} 
-\definecolor{date}{HTML}{666666} 
-\definecolor{primary}{HTML}{2b2b2b} 
-\definecolor{headings}{HTML}{6A6A6A}
-\definecolor{subheadings}{HTML}{333333}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Set main fonts
-\usepackage{fontspec}
-\setmainfont[Color=primary, Path = fonts/lato/,BoldItalicFont=Lato-RegIta,BoldFont=Lato-Reg,ItalicFont=Lato-LigIta]{Lato-Lig}
-\setsansfont[Scale=MatchLowercase,Mapping=tex-text, Path = fonts/raleway/]{Raleway-ExtraLight}
+\section{Education} 
 
-% Date command
-\usepackage[absolute]{textpos}
-\usepackage[UKenglish]{isodate}
-\setlength{\TPHorizModule}{1mm}
-\setlength{\TPVertModule}{1mm}
-\newcommand{\lastupdated}{\begin{textblock}{60}(155,5)
-\color{date}\fontspec[Path = fonts/raleway/]{Raleway-ExtraLight}\fontsize{8pt}{10pt}\selectfont 
-Last Updated on \today
-\end{textblock}}
+\subsection{NUS (National University of Singapore)}
+\descript{BComp in Information Security}
+\location{December 2021 | Singapore, SG}
+\sectionsep
 
-% Name command
-\newcommand{\namesection}[3]{
-\centering{
-\fontsize{40pt}{60pt}
-\fontspec[Path = fonts/lato/]{Lato-Hai}\selectfont #1 
-\fontspec[Path = fonts/lato/]{Lato-Lig}\selectfont #2
-} \\[5pt]
-\centering{
-\color{headings}
-\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{14pt}\selectfont #3}
-\noindent\makebox[\linewidth]{\color{headings}\rule{\paperwidth}{0.4pt}}
-\vspace{-15pt}
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LINKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Section seperators 
-\usepackage{titlesec}
-\titlespacing{\section}{0pt}{0pt}{0pt} 
-\titlespacing{\subsection}{0pt}{0pt}{0pt}
-\newcommand{\sectionsep}{\vspace{8pt}}
+\section{Links} 
+Github:// \href{https://github.com/derpyplops}{\bf derpyplops} \\
+LinkedIn://  \href{https://www.linkedin.com/in/jonathan-ng-7061a3162/}{\bf Jonathan Ng} \\
 
-% Headings command
-\titleformat{\section}{\color{headings}
-\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{16pt}{24pt}\selectfont \raggedright\uppercase}{}{0em}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     COURSEWORK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Subeadings command
-\titleformat{\subsection}{
-\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase}{}{0em}{}
+\section{Coursework}
 
-\newcommand{\runsubsection}[1]{
-\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
+\subsection{Undergraduate}
+Web Application \\
+Database Management \\
+Penetration Testing + Practicum \\
+Systems \& Web Security + Practicum \\
+Computer Networks II + Practicum \\
+Programming Methodology \\
+{\footnotesize \textit{\textbf{(Senior Teaching Asst.) }}} \\
+Unix Tools and Scripting \\
+\sectionsep
 
-% Descriptors command
-\newcommand{\descript}[1]{
-\color{subheadings}\raggedright\scshape\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Location command
-\newcommand{\location}[1]{
-\color{headings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
+\section{Skills}
+\subsection{Programming}
+\location{Proficient:}
+Python \textbullet{} Scala \textbullet{} VueJS  \\ 
+JS  \textbullet{} SQL \textbullet{} React\\
+\vspace{3mm}
+\location{Familiar:}
+Java\textbullet{} Shell \\ Golang \textbullet{} C++ \textbullet{} C \\
+\sectionsep
 
-% Bullet Lists with fewer gaps command
-\newenvironment{tightemize}{
-\vspace{-\topsep}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt}
-{\end{itemize}\vspace{-\topsep}}
+\subsection{Tools \& Frameworks}
+Apollo GQL \textbullet{} ZIO \textbullet{} Play Framework \\ AWS \textbullet{} GRPC \textbullet{} Jest \\ AsciiDoc \textbullet{} Redux \\ express.js \textbullet{} Kafka \textbullet{} Docker
+\sectionsep
 
+\subsection{Interests}
+\textbf{Effective Altruism} \\
+Arete Fellowship (SG) Organizer (Fall '20, Spring '21)\\
+NUS Chapter Lead\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Professional Experience}
+
+\runsubsection{Cadenza Labs}
+\descript{| Research Engineer }
+\location{Apr 2023 – Present}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Developed the \href{https://github.com/EleutherAI/elk}{EleutherAI/elk} library, worked on productionizing, coordinating and conducting large sweeps across multiple GPU clusters, conducted original experiments into language model probing, developing reproducible research by incorporating WandB.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{SERI MATS}
+\descript{| Research Engineer }
+\location{Jan 2023 – March 2023 | Singapore}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Participated in seminars and workshops relating to AI Alignment, mentored by Dr Dan Hendrycks.
+\item Authored (with others) the \emph{\textbf{Machiavelli}}
+paper (ICML23), created a data collection platform on Streamlit (\href{https://github.com/derpyplops/cyoa-streamlit}{repo})
+(\href{https://arxiv.org/abs/2304.03279}{paper}).
+\item Worked with the trlx library to train LMs on an \href{https://github.com/hendrycks/ethics}{ethics} dataset via RLHF.
+
+\end{tightemize}
+\sectionsep
+\runsubsection{LeadIQ}
+\descript{| Software Engineer (Full-Stack) }
+\location{Apr 2020 – June 2022 | Singapore}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Built Self-Serve Single Sign-On, a feature that automates SSO client setup, and cuts a 2-3 week long process down to a day. 
+Won internal hackathon 1st place. After winning, we brought the code and made it production ready in a month.
+\item Built Slack Bot delivering Job Change Notifications. \\ > \emph{Kafka, Scala, ZIO, Slack API}
+\item Built Assign Sequences with Outreach.io API.\\ > \emph{Vue, CSS, HTML, ApolloGQL, Scala}
+\end{tightemize}
+\sectionsep
+\runsubsection{Strongsalt}
+\descript{| Software Engineer Intern (Backend) }
+\location{Jan 2020 – Apr 2020 | California, San Jose}
+\vspace{\topsep} % Hacky fix for awkward extra vertical s2pace
+\begin{tightemize}
+\item StrongSalt is an encryption platform, featuring the world’s first always-on searchable encryption infrastructure.
+\item Wrote and deployed AWS S3 Component.
+\item Built and deployed API documentation from scratch with \textit{Docusaurus}.
+\item Implemented the Go and NodeJS API endpoints with GRPC.
+\end{tightemize}
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Projects
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Courses}
+\runsubsection{MLSS}
+\descript{| ML Safety Course}
+\location{July - September 2022}
+\begin{tightemize}
+\item Course teaching ML and DL concepts, and current topics in AI Safety with focus on Systems Safety.
+\end{tightemize}
+\sectionsep
+
+\runsubsection{ARENA}
+\descript{| ML Engineering}
+\location{October - December 2022}
+\begin{tightemize}
+\item Course imparting deep understanding about fundamentals systems such as DL, RL.
+\item Implemented architectures PPO, BERT, GPT (and more) from scratch.
+\item Hands on experience with the latest in mechanistic interpretability research.
+\item Contributed to TransformerLens, an open source library for interpretability research.
+\end{tightemize}
+\sectionsep
+
+\end{minipage}
+\end{document}  \documentclass[]{article}
