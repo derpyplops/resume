@@ -65,7 +65,8 @@
 %     TITLE NAME
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\namesection{Jonathan}{Ng} { \urlstyle{same}\href{mailto:jonathan.n@u.nus.edu}{jonathan.n@u.nus.edu}| \href{http://t.me/derpy/}{@derpy}\\
+\namesection{Jonathan}{Ng} {\urlstyle{same} \href{mailto:jonathan.ng1@gmail.com
+}{jonathan.ng1@gmail.com} | \href{http://t.me/derpy/}{@derpy}\\
 \href{http://www.h1b1.com/practices/h-1b1-visa-for-chileans-singaporeans/}{H1B1 Eligible}
 | +65 83995537
 \\
@@ -98,22 +99,7 @@
 Github:// \href{https://github.com/derpyplops}{\bf derpyplops} \\
 LinkedIn://  \href{https://www.linkedin.com/in/jonathan-ng-7061a3162/}{\bf Jonathan Ng} \\
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     COURSEWORK
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Coursework}
-
-\subsection{Undergraduate}
-Web Application \\
-Database Management \\
-Penetration Testing + Practicum \\
-Systems \& Web Security + Practicum \\
-Computer Networks II + Practicum \\
-Programming Methodology \\
-{\footnotesize \textit{\textbf{(Senior Teaching Asst.) }}} \\
-Unix Tools and Scripting \\
-\sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     SKILLS
@@ -137,6 +123,12 @@ Apollo GQL \textbullet{} ZIO \textbullet{} Play Framework \\ AWS \textbullet{} G
 \textbf{Effective Altruism} \\
 Arete Fellowship (SG) Organizer (Fall '20, Spring '21)\\
 NUS Chapter Lead\\
+\sectionsep
+
+\subsection{Misc}
+\textbf{ARENA} (\href{https://www.arena.education/}{arena.education})\\
+\textbullet{} Implemented PPO, BERT, GPT (and more) from scratch. \\
+\textbullet{} Contributed to TransformerLens, an open source library for interpretability research.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -154,13 +146,25 @@ NUS Chapter Lead\\
 
 \section{Professional Experience}
 
+\runsubsection{Apart Research}
+\descript{| Research Engineer (Contracting) }
+\location{Apr 2024 – Present}
+\vspace{\topsep}
+\begin{tightemize}
+\item First author on \emph{\textbf{Catastrophic Cyber Capabilities Benchmark (3CB): Robustly Evaluating LLM
+Agent Cyber Offense Capabilities}} (pending review - ICLR '25)
+\item Designed and implemented 11 complex cybersecurity LLM agent evals
+\item Implemented multi-Docker agent evaluations in our agent LLM scaffolding
+\item Wrote and conducted experiments across 14 language models, across Anthropic, OpenAI, TogetherAI, Replicate
+\end{tightemize}
+\sectionsep
+
 \runsubsection{Surveyor}
 \descript{| Sole Engineer }
 \location{Oct 2023 – Present}
-\vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize} 
-\item Sole engineer building \href{https://surveyor.ink/}{Surveyor}, a webapp to build and deploy surveys. Implemented all aspects of its development, including coding, UX design, architecture and prompt engineering.
-\item Prompt engineering: wrote all prompts and refined them for consistency and performance. 
+\item Sole engineer building \href{https://surveyor.ink/}{Surveyor}, a webapp to build and deploy surveys. Backend, UX design, architecture and prompt engineering.
+\item Implemented data pipeline for robustly parsing surveys from LM outputs, inclusive of conducting experiments and writing tests
 \item Oversaw sub-contractor work on productionizing via containerization. \\> VueJS, TypeScript, Firestore DB, OpenAI API
 \end{tightemize}
 \sectionsep
@@ -168,19 +172,18 @@ NUS Chapter Lead\\
 \runsubsection{Cadenza Labs}
 \descript{| Research Engineer }
 \location{Apr 2023 – Present}
-\vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
-\item Developed the \href{https://github.com/EleutherAI/elk}{EleutherAI/elk} library, worked on productionizing, coordinating and conducting large sweeps across multiple GPU clusters, conducted original experiments into language model probing, developing reproducible research by incorporating WandB.
+\item Developed the \href{https://github.com/EleutherAI/elk}{EleutherAI/elk} library, a white-box LLM interpretability library for training "truth-seeking" probes
+\item Coordinated and conducted large sweeps across multiple GPU clusters, conducted original experiments
 \end{tightemize}
 \sectionsep
 
 \runsubsection{SERI MATS}
 \descript{| Research Engineer }
 \location{Jan 2023 – March 2023 | Singapore}
-\vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
 \item Participated in seminars and workshops relating to AI Alignment, mentored by Dr Dan Hendrycks.
-\item Authored (with others) the \emph{\textbf{Machiavelli}}
+\item Authored the \emph{\textbf{Machiavelli}}
 paper (ICML23), created a data collection platform on Streamlit (\href{https://github.com/derpyplops/cyoa-streamlit}{repo})
 (\href{https://arxiv.org/abs/2304.03279}{paper}).
 \item Worked with the trlx library to train LMs on an \href{https://github.com/hendrycks/ethics}{ethics} dataset via RLHF.
@@ -190,39 +193,15 @@ paper (ICML23), created a data collection platform on Streamlit (\href{https://g
 \runsubsection{LeadIQ}
 \descript{| Software Engineer (Full-Stack) }
 \location{Apr 2020 – June 2022 | Singapore}
-\vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
 \item Built Self-Serve Single Sign-On, a feature that automates SSO client setup, and cuts a 2-3 week long process down to a day. 
 Won internal hackathon 1st place. After winning, we brought the code and made it production ready in a month.
 \item Built Slack Bot delivering Job Change Notifications. \\ > \emph{Kafka, Scala, ZIO, Slack API}
 \item Built Assign Sequences with Outreach.io API.\\ > \emph{Vue, CSS, HTML, ApolloGQL, Scala}
 \end{tightemize}
-\sectionsep
-\runsubsection{Strongsalt}
-\descript{| Software Engineer Intern (Backend) }
-\location{Jan 2020 – Apr 2020 | California, San Jose}
-\vspace{\topsep} % Hacky fix for awkward extra vertical s2pace
-\begin{tightemize}
-\item Wrote and deployed AWS S3 Component.
-\item Built and deployed API documentation from scratch with \textit{Docusaurus}.
-\item Implemented the Go and NodeJS API endpoints with GRPC.
-\end{tightemize}
-\sectionsep
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Projects
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Courses}
-
-\runsubsection{ARENA}
-\descript{| ML Engineering}
-\location{October - December 2022}
-\begin{tightemize}
-\item Implemented architectures PPO, BERT, GPT (and more) from scratch.
-\item Started contributing to TransformerLens, an open source library for interpretability research.
-\end{tightemize}
-\sectionsep
-
 \end{minipage}
 \end{document}  \documentclass[]{article}
